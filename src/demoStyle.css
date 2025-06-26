@@ -1,0 +1,232 @@
+body {
+  background: #dde4e8;
+  padding: 0 20px;
+  height: 100vh;
+  color: black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+body > div {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  background: #9fa8b2;
+  margin-top: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+div > h1 {
+  background-color: #211d1a;
+  border: none;
+  color: white;
+  font-size: 40px;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+}
+
+div > h2 {
+  background-color: #211d1a;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.flavour-card,
+.topping-card{
+  display: flex;
+  flex-direction: row;
+  background-color: #a13d4f;
+  overflow: hidden;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  width: 100%;
+}
+
+.card--fixedWidth {
+  width: 500px;
+  height: 150px;
+}
+
+.card-image {
+  flex: 1;
+  min-width: 150px;
+  max-width: 200px;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8c2e3e;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-description {
+  flex: 2;
+  padding: 10px;
+  color: white;
+  font-family: 'Courier New', monospace;
+}
+
+.topping-tail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cup-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #a13d4f;
+  overflow: hidden;
+  border-radius: 5px;
+  color: white;
+}
+
+.card--fixedWidth-cup {
+  width: 300px;
+  min-height: 400px;
+}
+
+.card-image-cup {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  background-color: #8c2e3e;
+}
+
+.card-description-cup {
+  padding: 10px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Courier New', monospace;
+  justify-content: space-between;
+}
+
+.jobs-tail {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* Shared panel style */
+.jobs-form-data{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #a13d4f;
+  padding: 30px;
+  width: 700px;
+  height: auto;
+  justify-content: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: white;
+  gap: 20px;
+}
+
+.jobs-button {
+  display: inline-block;
+  text-align: center;
+  background: black;
+  color: white;
+  border: none;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.jobs-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.form-input-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  width: 45%;
+  min-width: 250px;
+  margin-bottom: 10px;
+}
+
+.form-input-horizontal > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  margin: 0;
+}
+
+.form-input-horizontal > input[type="text"], select, input[type="file"]{
+  width: 55%;
+  padding: 6px 10px;
+  border: none;
+  background: #fff;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.jobs-form-data input:hover, select:hover, textarea:hover{
+  background-color: grey;
+}
+
+.form-input-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: black;
+  width: 93%;
+  min-width: 250px;
+  margin-bottom: 15px;
+}
+
+.form-input-vertical > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.form-input-vertical > textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  resize: vertical;
+  border: none;
+  background: #fff;
+  color: #333;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+}

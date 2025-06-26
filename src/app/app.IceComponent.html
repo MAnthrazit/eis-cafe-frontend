@@ -1,0 +1,17 @@
+<tr *ngFor="let flavour of flavours">
+    <td>{{flavours.id}}</td>
+</tr>
+
+<div class="container">
+  <div> 1 </div>
+  <div> 2 </div>
+  <div> 3 </div>
+</div>
+
+<form (ngSubmit)="addFlavours($event)">
+  <input type="text" id="name" name="name" [(ngModel)]="name" required>
+  <input type="text" id="description" name="description" [(ngModel)]="description" required>
+  <input type="checkbox" id="isVegan" name="isVegan" [(ngModel)]="isVegan" required>
+  <input type="file" id="file" name="file" (change)="handleFileChange($event)" required>
+  <button type="submit">Share</button>
+</form>
