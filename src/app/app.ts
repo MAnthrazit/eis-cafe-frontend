@@ -5,14 +5,10 @@ import { Navbar} from './navbar/navbar';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Navbar],
-  template: `
-    <main>
-      <app-navbar></app-navbar>
-      <router-outlet></router-outlet>
-    </main>
-    `,
+  templateUrl: './app.html',
   styleUrl: './app.css'
 })
+
 export class App {
-  protected title = 'test';
+  protected title = 'eis-cafe-frontend';
 }

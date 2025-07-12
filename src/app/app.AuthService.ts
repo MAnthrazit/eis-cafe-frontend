@@ -8,24 +8,28 @@ import { Observable } from "rxjs";
 })
 
 export class AuthService {
-  baseUrl = '';
+  baseUrl : string = '';
+  auth : boolean = false;
 
   constructor(private http: HttpClient){ }
 
 
   login(form : FormData) {
-    this.http.post<User>(`${this.baseUrl}/login`, form).subscribe((data) => {
-      const timeout = data.expire;
-      console.log(data);
-
-      localStorage.setItem('id_token', data.id_token);
-      localStorage.setItem('expires_at', timeout.toString());
-    })
+    this.http.post<any>(`${this.baseUrl}/login`, form).subscribe(
+      (data: any) => {
+        this.auth = true;
+        localStorage.setItem('token', data.jwt);
+        alert(data.jwt);
+      },
+      (error: any) => {
+        console.error(error.message);
+      }
+    )
   }
 
   logout() : void {
-    localStorage.removeItem('id_token');
-    localStorage.removeItem('expires_at');
+    localStorage.removeItem('token');
+    this.auth = false;
   }
 }
 

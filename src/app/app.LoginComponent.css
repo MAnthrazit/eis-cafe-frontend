@@ -1,1 +1,100 @@
-<div></div>
+.login-wrapper {
+  width: 1200px;
+  padding: 10px;
+  background: #9fa8b2;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+h1 {
+  background-color: #211d1a;
+  border: none;
+  color: white;
+  font-size: 40px;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+}
+
+h2 {
+  background-color: #211d1a;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+}
+
+.login-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.login-form-data{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #a13d4f;
+  padding: 30px;
+  width: 700px;
+  height: auto;
+  justify-content: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: white;
+  gap: 20px;
+}
+
+.form-input-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  width: 45%;
+  min-width: 250px;
+  margin-bottom: 10px;
+}
+
+.form-input-horizontal > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  margin: 0;
+}
+
+.form-input-horizontal > input[type="text"], select, input[type="file"], input[type="number"], input[type="password"]{
+  width: 55%;
+  padding: 6px 10px;
+  border: none;
+  background: #fff;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.login-form-data input:hover, select:hover, textarea:hover{
+  background-color: grey;
+}
+
+.login-button {
+  display: inline-block;
+  text-align: center;
+  background: black;
+  color: white;
+  border: none;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: white;
+  color: black;
+}

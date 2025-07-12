@@ -230,3 +230,112 @@ div > h2 {
   font-size: 14px;
   box-sizing: border-box;
 }
+
+.form-input-vertical-half > textarea {
+  width: 100%;
+  height: 100px;
+  resize: vertical;
+  border: none;
+  background: #fff;
+  color: #333;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-input-vertical-half-img{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #8c2e3e;
+  width: 45%;
+  min-width: 250px;
+  padding: 0;
+}
+
+.form-input-vertical-half-img > .form-input-horizontal {
+  display: flex;
+  align-items: center;
+  background: black;
+  border: none;
+  width: 100%;
+  margin: 0;
+}
+
+.form-input-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  width: 45%;
+  min-width: 250px;
+  margin-bottom: 10px;
+}
+
+
+.form-input-horizontal-toggel > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  width: 40%;
+  margin: 0;
+}
+
+.form-input-horizontal-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  color: white;
+  width: 12.5%;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  display: none;
+}
+
+/* Container for the custom toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+/* Circle inside the slider */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* Checked state */
+.switch input:checked + .slider {
+  background-color: #4caf50;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+

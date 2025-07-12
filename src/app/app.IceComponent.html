@@ -1,17 +1,57 @@
-<tr *ngFor="let flavour of flavours">
-    <td>{{flavours.id}}</td>
-</tr>
+<div class="ice-wrapper">
+  <h1>#Eis</h1>
+  <h2>Geschmäcker</h2>
 
-<div class="container">
-  <div> 1 </div>
-  <div> 2 </div>
-  <div> 3 </div>
+  <div class="card-container">
+
+    <div class="flavour-card card--fixedWidth" *ngFor="let flavour of flavours">
+      <div class="card-image">🍦</div>
+      <div class="card-description">
+        <h3>{{flavour.name}}</h3>
+        <p>{{flavour.description}}</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <form (ngSubmit)="addFlavours($event)">
+  <div class="ice-form-wrapper">
+    <div class="ice-form-data">
+      <div class="form-input-horizontal">
+        <p>Name</p>
+        <input type="text" id="name" name="name" [(ngModel)]="name" required/>
+      </div>
+
+      <div class="form-input-horizontal">
+        <p>ID</p>
+        <input type="number" id="id" name="id" [(ngModel)]="id" required/>
+      </div>
+
+      <div class="form-input-vertical-half-img">
+        <img *ngIf="previewUrl" [src]="previewUrl" alt="Preview" />
+        <div class="form-input-horizontal">
+          <p>Bild</p>
+          <input type="file" id="file" name="file" (change)="handleFileChange($event)" required/>
+        </div>
+      </div>
+
+      <div class="form-input-vertical-half">
+        <p>Beschreibung</p>
+        <textarea id="description" name="description" [(ngModel)]="description" required> </textarea>
+      </div>
+
+      <div class="form-input-horizontal-toggle">
+        <p>Vegan</p>
+        <label class="switch">
+          <input type="checkbox" id="isVegan" name="isVegan" [(ngModel)]="isVegan" required/>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+    </div>
+    <button type="submit" class="ice-button"> Send </button>
+  </div>
+
+  </form>
 </div>
-
-<form (ngSubmit)="addFlavours($event)">
-  <input type="text" id="name" name="name" [(ngModel)]="name" required>
-  <input type="text" id="description" name="description" [(ngModel)]="description" required>
-  <input type="checkbox" id="isVegan" name="isVegan" [(ngModel)]="isVegan" required>
-  <input type="file" id="file" name="file" (change)="handleFileChange($event)" required>
-  <button type="submit">Share</button>
-</form>

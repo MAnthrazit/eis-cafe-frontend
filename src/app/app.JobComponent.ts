@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { JobService } from "./app.JobService";
 import { FormsModule } from "@angular/forms";
 
@@ -9,15 +9,28 @@ import { FormsModule } from "@angular/forms";
   styleUrl: 'app.JobComponent.css'
 })
 
-export class JobComponent implements OnInit {
+export class JobComponent {
   name : string = '';
   surname : string = '';
   comment : string = '';
   eMail : string = '';
-  type : string = '';
-  file : File | null = null;
+  type : string = 'Praktikum';
+  cv_file : File | null = null;
+  cl_file : File | null = null;
 
   constructor(private jobService: JobService){}
+
+  onFileSelected(event: Event, type: 'cv' | 'cl') {
+    const input = event.target as HTMLInputElement;
+    if (input.files?.length) {
+      const file = input.files[0];
+      if (type === 'cv') {
+        this.cv_file = file;
+      } else {
+        this.cl_file = file;
+      }
+    }
+  }
 
   addJobRequest(event: Event) : void {
     event.preventDefault();
@@ -29,30 +42,37 @@ export class JobComponent implements OnInit {
     form.append('eMail', this.eMail);
     form.append('type', this.type);
 
-    if (this.file){
-      form.append('vcFile', this.file);
+    if (this.cv_file){
+      form.append('cv_file', this.cv_file);
     } else {
-      console.log("no CV");
+      console.error("Missing CV");
       return;
     }
 
-    this.jobService.addJobRequest(form).subscribe((data) => {
-      console.log(data);
-    });
+    if (this.cl_file){
+      form.append('cl_file', this.cl_file);
+    }
+
+    this.jobService.addJobRequest(form).subscribe(
+      (data: any) => {
+        console.log(data.message);
+      },
+      (error: any) => {
+        console.error(error.message);
+      }
+    );
   }
 
   decideJobRequest(event: Event, id: number, selector: string) : void {
     event.preventDefault();
 
-    this.jobService.decideJobRequest(id, selector).subscribe((data) => {
-      console.log(data);
-    });
+    this.jobService.decideJobRequest(id, selector).subscribe(
+      (data : any) => {
+        console.log(data.message);
+      },
+      (error : any) => {
+        console.error(error.message);
+      }
+    );
   }
-
-  ngOnInit(): void {
-
-  }
-
-
-
 }

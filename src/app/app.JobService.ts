@@ -13,14 +13,18 @@ export class JobService {
   constructor( private http: HttpClient){}
 
   addJobRequest(form : FormData) : Observable<any>{
-    return this.http.post<any>(`${this.baseUrl}/jobs`, form);
+    return this.http.post<any>(`${this.baseUrl}/api/v2/jobs`, form);
   }
 
   decideJobRequest(id: number, selector: string) : Observable<any>{
-    return this.http.delete<any>(`${this.baseUrl}/jobs/` + id + `/` + selector );
+    return this.http.delete<any>(`${this.baseUrl}/api/v2/jobs/` + id + `/` + selector );
+  }
+
+  getJobRequestCV(id: number) : Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/api/v2/jobs/` + id );
   }
 
   getJobRequests() : Observable<Job[]> {
-    return this.http.get<Job[]>(`${this.baseUrl}/jobs`);
+    return this.http.get<Job[]>(`${this.baseUrl}/api/v2/jobs`);
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import { Form } from "@angular/forms";
+import { FormsModule } from "@angular/forms";
+import { CupService } from "./app.CupService";
 
 
 @Component({
@@ -11,5 +12,17 @@ import { Form } from "@angular/forms";
 
 export class CupComponent {
 
-  constructor
+  constructor(private cupService: CupService) {}
+
+  addCup(event: Event) {
+    event.preventDefault();
+  }
+
+  deleteCup(event: Event){
+    event.preventDefault();
+  }
+
+  editCup(event: Event) {
+    event.preventDefault();
+  }
 }

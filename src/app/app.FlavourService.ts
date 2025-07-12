@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpResponse } from "@angular/common/http";
-import { catchError, Observable } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 import { Flavour } from "./app.FlavourInterface";
 
 @Injectable({
@@ -13,14 +13,14 @@ export class FlavourService {
   constructor(private http: HttpClient) {}
 
   getFlavours(): Observable<Flavour[]>{
-    return this.http.get<Flavour[]>(`${this.baseUrl}/flavours`)
+    return this.http.get<Flavour[]>(`${this.baseUrl}/api/v2/ice/flavours`)
   }
 
-  addFlavours(form: FormData): Observable<any>{
-    return this.http.post<any>(`${this.baseUrl}/flavours`, form);
+  addFlavours(form: FormData): Observable<Flavour>{
+    return this.http.post<Flavour>(`${this.baseUrl}/api/v2/ice/flavours`, form);
   }
 
   deleteFlavour(id: number): Observable<any>{
-    return this.http.delete<any>(`${this.baseUrl}/flavours/` + id);
+    return this.http.delete<any>(`${this.baseUrl}/api/v2/ice/flavours/` + id);
   }
 }

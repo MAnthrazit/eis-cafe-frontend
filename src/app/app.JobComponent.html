@@ -1,2 +1,53 @@
-<div>
+<div class="job-wrapper">
+  <h1> #Jobs </h1>
+  <h2> Wanna join our family </h2>
+
+  <form (ngSubmit)="addJobRequest($event)">
+  <div class="job-form-wrapper">
+    <div class="job-form-data">
+
+      <div class="form-input-horizontal">
+        <p> Name </p>
+        <input type="text" id="name" name="name" [(ngModel)]="name" required/>
+      </div>
+
+      <div class="form-input-horizontal">
+        <p> Nachname </p>
+        <input type="text" id="surname" name="surname" [(ngModel)]="surname" required/>
+      </div>
+
+      <div class="form-input-horizontal">
+        <p> E-Mail </p>
+        <input type="text" id="eMail" name="eMail" [(ngModel)]="eMail" required/>
+      </div>
+
+      <div class="form-input-horizontal">
+        <p> Beschäftigung </p>
+        <select name="type" [(ngModel)]="type" required>
+          <option> Praktikum </option>
+          <option> Vollzeit </option>
+          <option> Teilzeit </option>
+        </select>
+      </div>
+
+      <div class="form-input-vertical">
+        <p> Kommentat </p>
+        <textarea id="comment" name="comment" [(ngModel)]="comment"></textarea>
+      </div>
+
+      <div class="form-input-horizontal">
+        <p> Lebenslauf </p>
+        <input type="file" id="cv_file" name="cv_file" [(ngModel)]="cv_file" (change)="onFileSelected($event, 'cl')" required/>
+      </div>
+
+      <div class="form-input-horizontal">
+        <p> Anschreiben </p>
+        <input type="file" id="cl_file" name="cl_file" [(ngModel)]="cl_file" (change)="onFileSelected($event, 'cl')"/>
+      </div>
+
+    </div>
+    <button type="submit" class="job-button"> Senden </button>
+  </div>
+
+  </form>
 </div>
