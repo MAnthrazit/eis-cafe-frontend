@@ -1,0 +1,71 @@
+<div class="topping-wrapper">
+  <h1>#Toppings</h1>
+
+  <div class="topping-columns">
+    <div class="topping-column">
+      <h2>Fruits</h2>
+      <div class="topping-card" *ngFor="let fruit of fruits">
+        <p> 🍓 {{fruit.name}} </p>
+      </div>
+    </div>
+
+    <div class="topping-column">
+      <h2>Candies</h2>
+      <div class="topping-card" *ngFor="let candy of candies">
+        <p> 🍫 {{candy.name}} </p>
+      </div>
+    </div>
+
+    <div class="topping-column">
+      <h2>Sauces</h2>
+      <div class="topping-card" *ngFor="let sauce of sauces">
+        <p> 🍯 {{sauce.name}} </p>
+      </div>
+    </div>
+  </div>
+
+
+  <form (ngSubmit)="addToppings($event)">
+  <div class="topping-form-wrapper">
+    <div class="topping-form-data">
+      <div class="form-input-horizontal">
+        <p>Name</p>
+        <input type="text" id="name" name="name" [(ngModel)]="name" required/>
+      </div>
+
+      <div class="form-input-horizontal">
+        <p>Typ</p>
+        <select name="type" [(ngModel)]="type" required>
+          <option> fruits </option>
+          <option> candies </option>
+          <option> sauces </option>
+        </select>
+      </div>
+
+      <div class="form-input-vertical-half-img">
+        <img *ngIf="previewUrl" [src]="previewUrl" alt="Preview" />
+        <div class="form-input-horizontal">
+          <p>Bild</p>
+          <input type="file" id="file" name="file" (change)="handleFileChange($event)" required/>
+        </div>
+      </div>
+
+      <div class="form-input-vertical-half">
+        <p>Beschreibung</p>
+        <textarea id="description" name="description" [(ngModel)]="description" required> </textarea>
+      </div>
+
+      <div class="form-input-horizontal-toggle">
+        <p>Vegan</p>
+        <label class="switch">
+          <input type="checkbox" id="isVegan" name="isVegan" [(ngModel)]="isVegan" required/>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+    </div>
+    <button type="submit" class="topping-button"> Send </button>
+  </div>
+
+  </form>
+  </div>

@@ -65,12 +65,7 @@ export class IceComponent implements OnInit{
 
     this.flavourService.addFlavours(form).subscribe(
       (data: Flavour) => {
-        this.flavours.push({
-          id: data.id,
-          name: data.name,
-          description: data.description,
-          isVegan: data.isVegan
-        })
+        this.flavours.push(data);
       },
       (error: any) => {
         console.error(error.message);

@@ -1,0 +1,259 @@
+.topping-wrapper {
+  width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #9fa8b2;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  background-color: #211d1a;
+  color: white;
+  font-size: 40px;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+h2 {
+  background-color: #211d1a;
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px;
+  margin: 0 0 10px 0;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.topping-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.topping-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #a13d4f;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.topping-card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #8c2e3e;
+  color: white;
+  border-radius: 6px;
+  font-size: 18px;
+  transition: background-color 0.2s ease;
+  cursor: default;
+}
+
+.topping-card:hover {
+  background-color: #b04e60;
+}
+
+
+.topping-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.topping-form-data{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #a13d4f;
+  padding: 30px;
+  width: 700px;
+  height: auto;
+  justify-content: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: white;
+  gap: 20px;
+}
+
+.form-input-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  width: 45%;
+  min-width: 250px;
+  margin-bottom: 10px;
+}
+
+.form-input-horizontal > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  margin: 0;
+}
+
+.form-input-horizontal > input[type="text"], select, input[type="file"], input[type="number"]{
+  width: 55%;
+  padding: 6px 10px;
+  border: none;
+  background: #fff;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.topping-form-data input:hover, select:hover, textarea:hover{
+  background-color: grey;
+}
+
+.form-input-vertical-half {
+  display: flex;
+  flex-direction: column;
+  background: black;
+  width: 45%;
+  min-width: 250px;
+  padding: 0;
+}
+
+.form-input-vertical-half > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.form-input-vertical-half > textarea {
+  width: 100%;
+  height: auto;
+  resize: vertical;
+  border: none;
+  background: #fff;
+  color: #333;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-input-vertical-half-img{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #8c2e3e;
+  width: 45%;
+  min-width: 250px;
+  padding: 0;
+}
+
+.form-input-vertical-half-img > .form-input-horizontal {
+  display: flex;
+  align-items: center;
+  background: black;
+  border: none;
+  width: 100%;
+  margin: 0;
+}
+
+.form-input-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  width: 45%;
+  min-width: 250px;
+  margin-bottom: 10px;
+}
+
+.topping-button {
+  display: inline-block;
+  text-align: center;
+  background: black;
+  color: white;
+  border: none;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.topping-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.form-input-horizontal-toggel > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  width: 40%;
+  margin: 0;
+}
+
+.form-input-horizontal-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  color: white;
+  width: 12.5%;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  display: none;
+}
+
+/* Container for the custom toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+/* Circle inside the slider */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* Checked state */
+.switch input:checked + .slider {
+  background-color: #4caf50;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+

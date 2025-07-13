@@ -13,15 +13,15 @@ export class ToppingService{
   constructor(private http : HttpClient){}
 
   getToppings(type : string) : Observable<Topping[]>{
-    return this.http.get<Topping[]>(`${this.baseUrl}/toppings/` + type);
+    return this.http.get<Topping[]>(`${this.baseUrl}/api/v2/ice/toppings/` + type);
   }
 
-  addTopping(form: FormData) : Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/toppings`, form);
+  addTopping(type: string, form: FormData) : Observable<Topping> {
+    return this.http.post<Topping>(`${this.baseUrl}/api/v2/ice/toppings/` + type, form);
   }
 
   deleteTopping(id: number) : Observable<any> {
-    return this.http.delete<any>(`${this.baseUrl}/toppings/` + id);
+    return this.http.delete<any>(`${this.baseUrl}/api/v2/ice/toppings/` + id);
   }
 
 }
